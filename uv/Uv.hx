@@ -331,6 +331,8 @@ extern class Uv {
 	public static function unref(handle:RawPointer<Handle_t>):Void;
 	@:native("uv_has_ref")
 	public static function has_ref(handle:RawConstPointer<Handle_t>):Int;
+	@:native("uv_handle_get_loop")
+	public static function handle_get_loop(handle:RawConstPointer<Handle_t>):RawPointer<Loop_t>;
 	@:native("uv_handle_size")
 	public static function handle_size(type:HandleType):SizeT;
 	// fs

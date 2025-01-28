@@ -1,7 +1,8 @@
 package uv;
 
-import uv.Uv;
 import cpp.*;
+import uv.Loop;
+import uv.Uv;
 
 @:dce
 abstract Handle(Pointer<Handle_t>) from Pointer<Handle_t> to Pointer<Handle_t> {
@@ -13,6 +14,10 @@ abstract Handle(Pointer<Handle_t>) from Pointer<Handle_t> to Pointer<Handle_t> {
 	
 	public inline function setData<T>(v:Data<T>) this.value.data = cast v;
 	public inline function getData<T>():Data<T> return untyped __cpp__('{0}.data', this.value);
+
+	public inline function getLoop(): Loop {
+		return Pointer.fromRaw(Uv.handle_get_loop(asRaw()));
+	}
 	
 	public inline function close(cb) Uv.close(asRaw(), cb);
 	public inline function isClosing() return Uv.is_closing(asRaw()) != 0;
