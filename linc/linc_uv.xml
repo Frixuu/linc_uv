@@ -25,6 +25,10 @@
 		<file name="${UV}/src/fs-poll.c"/>
 		<file name="${UV}/src/idna.c"/>
 		<file name="${UV}/src/inet.c"/>
+		<file name="${UV}/src/random.c"/>
+		<file name="${UV}/src/strscpy.c"/>
+		<file name="${UV}/src/strtok.c"/>
+		<file name="${UV}/src/thread-common.c"/>
 		<file name="${UV}/src/threadpool.c"/>
 		<file name="${UV}/src/timer.c"/>
 		<file name="${UV}/src/uv-common.c"/>
@@ -75,6 +79,7 @@
 			<file name="${UV}/src/unix/pipe.c"/>
 			<file name="${UV}/src/unix/poll.c"/>
 			<file name="${UV}/src/unix/process.c"/>
+			<file name="${UV}/src/unix/random-devurandom.c"/>
 			<file name="${UV}/src/unix/signal.c"/>
 			<file name="${UV}/src/unix/stream.c"/>
 			<file name="${UV}/src/unix/tcp.c"/>
@@ -84,12 +89,10 @@
 			
 			<file name="${UV}/src/unix/proctitle.c"/>
 			
-			<file name="${UV}/src/unix/linux-core.c"/>
-			<file name="${UV}/src/unix/linux-inotify.c"/>
-			<file name="${UV}/src/unix/linux-syscalls.c"/>
+			<file name="${UV}/src/unix/linux.c"/>
 			<file name="${UV}/src/unix/procfs-exepath.c"/>
-			<file name="${UV}/src/unix/sysinfo-loadavg.c"/>
-			<file name="${UV}/src/unix/sysinfo-memory.c"/>
+			<file name="${UV}/src/unix/random-getrandom.c"/>
+			<file name="${UV}/src/unix/random-sysctl-linux.c"/>
 		</section>
 
 		<section if="macos">
@@ -106,6 +109,7 @@
 			<file name="${UV}/src/unix/pipe.c"/>
 			<file name="${UV}/src/unix/poll.c"/>
 			<file name="${UV}/src/unix/process.c"/>
+			<file name="${UV}/src/unix/random-devurandom.c"/>
 			<file name="${UV}/src/unix/signal.c"/>
 			<file name="${UV}/src/unix/stream.c"/>
 			<file name="${UV}/src/unix/tcp.c"/>
@@ -117,6 +121,8 @@
 			
 			<file name="${UV}/src/unix/bsd-ifaddrs.c"/>
 			<file name="${UV}/src/unix/kqueue.c"/>
+
+			<file name="${UV}/src/unix/random-getentropy.c"/>
 			
 			<file name="${UV}/src/unix/darwin-proctitle.c"/>
 			<file name="${UV}/src/unix/darwin.c"/>
